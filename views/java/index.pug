@@ -1,0 +1,335 @@
+doctype strict
+//
+  Design by TEMPLATED
+  http://templated.co
+  Released for free under the Creative Commons Attribution License
+  Name       : MetroBiz
+  Description: A two-column, fixed-width design with dark color scheme.
+  Version    : 1.0
+  Released   : 20140207
+head
+  meta(http-equiv='Content-Type' content='text/html; charset=utf-8')
+  title
+  meta(name='keywords' content='')
+  meta(name='description' content='')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  link(rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.7/ace.js')
+
+  link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet')
+  link(href='../default.css' rel='stylesheet' type='text/css' media='all')
+  link(href='../fonts.css' rel='stylesheet' type='text/css' media='all')
+  //if IE 6
+    link(href='default_ie6.css' rel='stylesheet' type='text/css')
+#header-wrapper
+  #header.container
+    #logo
+      h1
+        a(href='/') Java Learning
+      span
+    #menu
+      ul
+        li
+          a(href='/' accesskey='1' title='') Homepage
+        li.drop_down_menu.current_page_item
+          a(href='#' accesskey='2' title='') Study
+          ol.drop-down
+            li.drop-down-item
+              a(href='/study/java') Java
+            li.drop-down-item
+              a(href='/study/javascript') Javascript
+        li
+          a(href='/friends' accesskey='3' title='') Friend List
+        li
+          a(href='/life' accesskey='4' title='') Life
+        li
+          a(href='#' accesskey='5' title='') About Page
+
+#wrapper3
+  nav.sidebar
+    ul(onclick="show_hide('lessonList')")  Lesson
+    ul#lessonList
+      li Print
+      li User Input (Scanner)
+      li If Statement
+      li Print
+      li User Input (Scanner)
+      li If Statement
+      li Print
+      li User Input (Scanner)
+      li If Statement
+      li Print
+      li User Input (Scanner)
+      li If Statement
+      li Print
+      li User Input (Scanner)
+      li If Statement
+
+  .lessonQuestion
+    #q1
+      h1 Print statement
+      h5 Print &apos;Hello World&apos; in the console
+      p
+        i Syntax: 
+        code System.out.println(&quot;string&quot;);
+        |  =&gt; After printing a string, a new line comes afterwards
+        br
+        code System.out.print(&quot;string&quot;);
+        |   =&gt; There is no line after printing a string
+        br
+        code System.out
+        |  is a standard output from the device
+    #box1.box
+      .headbar
+        a(onclick='runCode("result1", "string1")') RUN
+        a(onclick='changeView("box1")') CHANGE VIEW
+      #container
+        #editor
+          .java
+            p
+              span.token-keyword public class
+              span.token-key  MyClass
+              span.token-punctuation {
+            p
+              |    
+              span.token-keyword public static void
+              span.token-key main
+              span.token-punctuation (
+              span.token-key String
+              span.token-punctuation []) {
+            p
+              span.token-key System.out.println
+              span.token-punctuation (&quot;
+              span.input
+                textarea#string1(name='string-name')
+              span.token-punctuation &quot;);
+            p
+              span.token-punctuation }}
+    #result1.result Output
+    #q2
+      h1 Scanner class
+      h5 Write program that allows users to input their name
+      p
+        i Syntax: 
+        code Scanner
+        |  scannerName = 
+        code new Scanner(System.in)
+        | ; 
+        br
+        |  Create a 
+        mark(style='background-color: yellow')
+          code Scanner
+        |  object and assign its reference to 
+        mark(style='background-color: yellow') scannerName
+        |  variable
+        ol
+          |  1) Import 
+          code Scanner
+          |  class
+        ol  2) Create a scanner
+        ol  3) Read input from user
+        br
+      p There are some popular input types 
+      table.w3-table.w3-bordered
+        tr
+          th Method
+          th Description
+        tr
+          td
+            code nextInt()
+          td
+            | read a 
+            code int
+            |  value from user
+        tr
+          td
+            code nextLine()
+          td
+            | read a 
+            code String
+            |  value from user
+        tr
+          td
+            code nextDouble()
+          td
+            | read a 
+            code double
+            |  value from user
+        tr
+          td
+            code next()
+          td
+            | read a 
+            code character
+            |  value from user
+        tr
+          td
+            code nextBoolean()
+          td
+            | read a 
+            code boolean
+            |  value from user
+      p
+    #box2.box
+      .headbar
+        a(onclick='runCode2("result2","input1")') RUN
+        a(onclick='changeView("box2")') CHANGE VIEW
+      #container
+        #editor
+          .java
+            p
+              span.token-keyword public class
+              span.token-key  MyClass
+              span.token-punctuation {
+            p
+              span.token-keyword     public static void
+              span.token-key main
+              span.token-punctuation (
+              span.token-key String
+              span.token-punctuation []) {
+            p
+              span.token-key Scanner
+              span.token-variable input
+              span.token-punctuation  = 
+              span.token-key new Scanner
+              span.token-punctuation (
+              span.token-key System
+              span.token-punctuation .
+              span.token-key in
+              span.token-punctuation );
+              br
+              span.token-key System
+              span.token-punctuation .
+              span.token-key out
+              span.token-punctuation .
+              span.token-key print
+              span.token-punctuation (&quot;
+              span.token-variable Please enter your name: 
+              span.token-punctuation &quot;);
+              br
+              span.token-key  String 
+              span.token-variable userName
+              span.token-punctuation  = 
+              span.token-variable input
+              span.token-punctuation .
+              span.token-key nextLine
+              span.token-punctuation ();
+              br
+              span.token-key System
+              span.token-punctuation .
+              span.token-key out
+              span.token-punctuation .
+              span.token-key println
+              span.token-punctuation (&quot;
+              | Hi
+              span.token-punctuation &quot; + 
+              span.token-variable userName
+              span.token-punctuation );
+            p
+              span.token-punctuation }}
+    div
+      span Please enter your name: 
+      textarea#input1(name='input' cols='30' rows='10')
+    #result2.result Output goes here!
+    #q3
+      h1 If Statement
+      h5 Print &apos;Hello World&apos; in the console
+      p 
+        code If 
+        |  is a construct that enables a program to specify
+        |  alternative path of execution
+      p Java has many type of selection statements
+      table.w3-table.w3-bordered
+        tr
+          th Statement
+          th Syntax
+        tr
+          td
+            |one-way if
+          td
+            code if
+            | (
+            code boolean-expression
+            | ) {
+            code statement(s)
+            |;}
+        tr
+          td
+            code nextLine()
+          td
+            | read a 
+            code String
+            |  value from user
+        tr
+          td
+            code nextDouble()
+          td
+            | read a 
+            code double
+            |  value from user
+        tr
+          td
+            code next()
+          td
+            | read a 
+            code character
+            |  value from user
+        tr
+          td
+            code nextBoolean()
+          td
+            | read a 
+            code boolean
+            |  value from user
+      
+    #box1.box
+      .headbar
+        a(onclick='runCode("result1", "string1")') RUN
+        a(onclick='changeView("box1")') CHANGE VIEW
+      #container
+        #editor
+          .java
+            p
+              span.token-keyword public class
+              span.token-key  MyClass
+              span.token-punctuation {
+            p
+              span.token-keyword &amp;nbsp; &amp;nbsp; public static void
+              span.token-key main
+              span.token-punctuation (
+              span.token-key String
+              span.token-punctuation []) {
+            p
+              span.token-key &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; System.out.println
+              span.token-punctuation (&quot;
+              span.input
+                textarea#string1(name='string-name')
+              span.token-punctuation &quot;);
+            p
+              span.token-punctuation }}
+    #result1.result Output
+
+#wrapper4
+  #footer.container
+    div
+      header.title
+        h2 Get in touch
+        span.byline Phasellus nec erat sit amet nibh pellentesque congue
+      ul.contact
+        li
+          a.icon.icon-facebook(href='#')
+            span
+        li
+          a.icon.icon-dribbble(href='#')
+            span Pinterest
+        li
+          a.icon.icon-tumblr(href='#')
+            span Google+
+#copyright.container
+  p
+    | &copy; Untitled. All rights reserved. | Photos by 
+    a(href='http://fotogrph.com/') Fotogrph
+    |  | Design by 
+    a(href='http://templated.co' rel='nofollow') TEMPLATED
+    | .
+script(src="../client.js")
